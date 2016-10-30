@@ -69,6 +69,7 @@ add_library (libsirius STATIC ${ALL_SRC_LIST})
 aux_source_directory(example EXAMPLE_SRC_LIST)
 aux_source_directory(example/echo EXAMPLE_SRC_LIST)
 aux_source_directory(example/lua EXAMPLE_SRC_LIST)
+aux_source_directory(example/net EXAMPLE_SRC_LIST)
 
 set(ALL_SRC_LIST ${ALL_SRC_LIST} ${EXAMPLE_SRC_LIST})
 

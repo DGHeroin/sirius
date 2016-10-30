@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <base/log/log.h>
+#include <string>
 
 #define VERSION_MAJAY 1
 #define VERSION_MINOR 0
