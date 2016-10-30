@@ -45,17 +45,23 @@ function(decare_sirius_internal_module module_name dep_libs)
     add_library (${this_module_name} STATIC ${INTERNAL_MODULE_SRC_LIST})
     set(ALL_SRC_LIST ${ALL_SRC_LIST} ${INTERNAL_MODULE_SRC_LIST} PARENT_SCOPE) # make sure add to PARENT_SCOPE
     set(DEP_LIBRARIES ${DEP_LIBRARIES} ${this_module_name} PARENT_SCOPE) # make sure add to PARENT_SCOPE
-    target_link_libraries(${this_module_name} sirius_base lua53)
+    # depend libs
+    FOREACH( var ${dep_libs} )
+        target_link_libraries(${this_module_name} ${var})
+    endforeach()
 
+    message(STATUS "================================")
     message(STATUS "decare internal module: " ${this_module_name})
     message(STATUS "src list: " ${INTERNAL_MODULE_SRC_LIST})
     message(STATUS "dep_libs: " ${dep_libs})
+    message(STATUS "ARGC: " ${ARGV})
     message(STATUS "*******************************")
 endfunction()
 
 #lua
-set(lua_lib_dep lua53)
-decare_sirius_internal_module(lua ${lua_lib_dep})
+decare_sirius_internal_module(lua "lua53;sirius_base" )
+#net
+decare_sirius_internal_module(net "sirius_base")
 
 add_library (libsirius STATIC ${ALL_SRC_LIST})
 
