@@ -27,9 +27,8 @@ endif ( MSVC )
 
 # Source code folder
 # Sirius core
-aux_source_directory(sirius/base/log BASE_SRC_LIST)
-aux_source_directory(sirius/base/time BASE_SRC_LIST)
 aux_source_directory(sirius/base/core BASE_SRC_LIST)
+aux_source_directory(sirius/base/thread BASE_SRC_LIST)
 
 add_library (sirius_base STATIC ${BASE_SRC_LIST})
 set(ALL_SRC_LIST ${ALL_SRC_LIST} ${BASE_SRC_LIST})
@@ -70,6 +69,7 @@ aux_source_directory(example EXAMPLE_SRC_LIST)
 aux_source_directory(example/echo EXAMPLE_SRC_LIST)
 aux_source_directory(example/lua EXAMPLE_SRC_LIST)
 aux_source_directory(example/net EXAMPLE_SRC_LIST)
+aux_source_directory(example/thread EXAMPLE_SRC_LIST)
 
 set(ALL_SRC_LIST ${ALL_SRC_LIST} ${EXAMPLE_SRC_LIST})
 

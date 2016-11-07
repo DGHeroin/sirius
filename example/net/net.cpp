@@ -1,4 +1,3 @@
-#include <base/log/log.h>
 #include <net/net.h>
 #include <sstream>
 #include <base/core/File.h>

@@ -6,7 +6,8 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <assert.h>
-#include <base/log/log.h>
+#include <base/core/log.h>
+#include <base/core/time.h>
 #include <string>
 
 #define VERSION_MAJAY 1

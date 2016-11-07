@@ -1,4 +1,3 @@
-#include <base/log/log.h>
 #include <lua/lua.h>
 
 #define LOG_TAG "example lua"

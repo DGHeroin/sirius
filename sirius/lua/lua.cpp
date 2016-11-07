@@ -1,5 +1,4 @@
 #include <lua/lua.h>
-#include <base/log/log.h>
 #include <base/core/File.h>
 
 #define LOG_TAG "sirius lua"

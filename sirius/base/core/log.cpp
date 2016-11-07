@@ -1,13 +1,20 @@
-#include <base/log/log.h>
+#include <base/core/log.h>
 #include <stdarg.h>
 #include <stdio.h>
-
-#include <base/time/time.h>
+#include <base/core/Mutex.h>
 
 #include <iostream>
 using namespace std;
 
+static Mutex* g_LogMutex = NULL;
+
 void log_vprint(int priority, char* tag, char* fmt, ...){
+    if(g_LogMutex == NULL){
+        g_LogMutex = Mutex_create ();
+    }
+    AutoMutex _l(g_LogMutex);
+    (void)_l;
+
     const size_t buff_sz = 64*1024;
     char buffer[buff_sz]={0};
     size_t offset = 0;
